@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Library</h1>
+      <button class="show-dialog">New Book</button>
+      <dialog id="dialog">
+        <form>
+          <div>
+            <label for="title">Title</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Enter Book Title"
+              required
+            />
+          </div>
+          <div>
+            <label for="author">Author</label>
+            <input
+              type="text"
+              name="author"
+              id="author"
+              placeholder="Enter Book Author"
+              required
+            />
+          </div>
+          <div>
+            <label for="pages">Number Of Pages</label>
+            <input
+              type="number"
+              name="pages"
+              id="pages"
+              placeholder="Enter Number Of Pages"
+              min="1"
+              required
+            />
+          </div>
+          <div>
+            <label for="status">Book Status</label>
+            <select name="status" id="status" required>
+              <option value="Read">Read</option>
+              <option value="No Read">No Read</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit" id="add-book">Add Book</button>
+            <button id="cancel">Close</button>
+          </div>
+        </form>
+      </dialog>
+      <h2>List Of Books</h2>
+      <div class="books">
+        <div class="empty-msg">There Is No Books</div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

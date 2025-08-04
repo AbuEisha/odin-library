@@ -1,0 +1,199 @@
+:root {
+  --primary-color: #009688;
+  --secondary-color: #eee;
+  --add-color: #9c27b0;
+  --close-color: #f44336;
+  --remove-color: #e91e63;
+  --change-color: brown;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--secondary-color);
+}
+.container {
+  min-height: 100vh;
+  width: 1100px;
+  margin: auto;
+  background-color: white;
+}
+
+h1 {
+  text-align: center;
+  padding: 35px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--secondary-color);
+  font-size: 40px;
+}
+.show-dialog {
+  display: block;
+  width: 230px;
+  margin: auto;
+  padding: 14px 0;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.show-dialog:hover {
+  border-color: var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+dialog {
+  width: 580px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+dialog form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+dialog form > div {
+  width: calc((100% - 20px) / 2);
+}
+dialog form > div label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+dialog form > div input,
+dialog form > div select {
+  height: 34px;
+  padding: 0 10px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  outline-color: var(--primary-color);
+}
+dialog form > div:last-of-type {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+dialog form > div button {
+  flex: 1;
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+dialog form > div button:first-of-type {
+  background-color: var(--add-color);
+}
+dialog form > div button:first-of-type:hover,
+dialog form > div button:last-of-type:hover {
+  background-color: transparent;
+}
+dialog form > div button:first-of-type:hover {
+  border-color: var(--add-color);
+  color: var(--add-color);
+}
+dialog form > div button:last-of-type:hover {
+  border-color: var(--close-color);
+  color: var(--close-color);
+}
+dialog form > div button:last-of-type {
+  background-color: var(--close-color);
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 30px 0;
+  padding: 0 0 30px;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 25px;
+  padding: 0 15px;
+}
+.books .empty-msg {
+  font-size: 22px;
+  font-weight: bold;
+}
+.books .card {
+  padding: 20px;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 22%);
+}
+.books .card h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+.books .card > div:not(.buttons) {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.books .card div span {
+  display: inline-block;
+  width: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+.books .card .buttons {
+  display: flex;
+  gap: 20px;
+}
+.books .card .buttons button {
+  flex: 1;
+  height: 45px;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.books .card .buttons button.remove {
+  background-color: var(--remove-color);
+}
+.books .card .buttons button.remove:hover {
+  background-color: transparent;
+  border-color: var(--remove-color);
+  color: var(--remove-color);
+}
+.books .card .buttons button.change {
+  background-color: var(--change-color);
+}
+
+.books .card .buttons button.change:hover {
+  background-color: transparent;
+  border-color: var(--change-color);
+  color: var(--change-color);
+}
